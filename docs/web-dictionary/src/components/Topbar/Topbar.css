@@ -1,0 +1,11 @@
+.tb-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tb-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.63rem;
+}
