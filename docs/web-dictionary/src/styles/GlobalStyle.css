@@ -1,0 +1,21 @@
+[data-theme="dark"] 
+{
+  --body_background: #050505;
+  --body_color: #fff;
+  --heading-color: #757575
+  --link_color: white;
+  --shadow_color: rgba(0, 0, 0, 0.10);;
+  transition: 0.2s all;
+
+}
+
+[data-theme="light"] {
+  --body_background: white;
+  --body_color: #2D2D2D;
+  --heading-color: #757575
+  --link_color: white;
+  --shadow_color: #A445ED;
+
+  transition: 0.2s all;
+
+}
