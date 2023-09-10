@@ -6,6 +6,8 @@ import DarkMode from "./../../components/DarkMode/DarkMode";
 import SelectFont from "../SelectFont/SelectFont";
 
 const Topbar = () => {
+  
+
   return (
     <div className="tb-container ">
       <img src={LogoIcon}></img>

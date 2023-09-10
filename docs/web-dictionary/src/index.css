@@ -1,7 +1,25 @@
+@font-face {
+  font-family: "Inter";
+  src: url(./assets/fonts/inter/Inter-VariableFont_slnt\wght.ttf);
+}
+@font-face {
+  font-family: "Lora";
+  src: url("./assets/fonts/lora/Lora-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Inconsolata";
+  src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdthwght.ttf");
+}
+
 html {
   height: 100%;
 }
 
 body {
   margin: 0px;
+}
+
+button {
+  color: var(--body_color);
 }

@@ -1,5 +1,4 @@
 body {
-  min-height: 100vh;
   color: var(--body_color);
   background-color: var(--body_background);
 }
@@ -9,10 +8,8 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-}
-
-.content-light {
- 
+  margin-top: 3.63rem;
+  margin-bottom: 7.75rem;
 }
 
 .app-link {

@@ -1,39 +1,54 @@
-.sf-container {
-  display: flex;
-
-  gap: 1.12rem;
-}
-
 .sf-select {
-  appearance: none;
-  border: 0;
-  outline: 0;
-  color: var(--body_color);
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.sf-select-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.125rem;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem;
-  background: url(./../../assets/images/icon-arrow-down.svg) no-repeat right
-    center / 1rem;
-  width: 7.5rem;
+  appearance: none;
+  border: none;
+  background-color: transparent;
 }
 
-.sf-container select {
+.sf-select-button:hover {
+  cursor: pointer;
 }
 
-.sf-container select option {
-  color: var(--body_color);
-  background-color: var(--body_background);
-  border: transparent;
+
+
+.sf-select-options {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 2.62rem;
+  width: 100%;
   gap: 1rem;
-  padding: 1.5rem, 4.31rem, 1.5rem, 1.5rem;
+  margin: 0;
+  padding: 1.5rem 4.31rem 1.5rem 1.5rem;
+  color: var(--body_color);
+  list-style-type: none;
+
+  background-color: var(--body_secondary);
   border-radius: 1rem;
   box-shadow: 0px 5px 30px 0px var(--shadow_color);
 }
 
-select.classic {
-  background-color: black;
+.sf-select-option {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
 }
 
-.sf-select option {
-  color: var(--body_color);
+.sf-select-option:hover {
+  color: var(--purple);
+  cursor: pointer;
 }
