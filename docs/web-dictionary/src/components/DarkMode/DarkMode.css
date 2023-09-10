@@ -1,2 +1,6 @@
-.dk-input {
+.dk-dark-mode {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  align-items: center;
 }

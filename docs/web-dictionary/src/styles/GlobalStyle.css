@@ -3,6 +3,7 @@
   --purple: #a445ed;
   --danger: #ff5252;
 
+  font-family: var(--font_family);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,15 +12,15 @@
 }
 
 [data-font="sans-serif"] {
-  font-family: "Inter", sans-serif;
+  --font_family: "Inter";
 }
 
 [data-font="serif"] {
-  font-family: "Lora", serif;
+  --font_family: "Lora";
 }
 
 [data-font="mono"] {
-  font-family: "Inconsolota", monospace;
+  --font_family: "Inconsolata";
 }
 
 [data-theme="dark"] {
