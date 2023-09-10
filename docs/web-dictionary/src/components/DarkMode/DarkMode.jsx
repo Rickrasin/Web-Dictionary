@@ -1,3 +1,6 @@
+import "./DarkMode.css";
+
+
 const DarkMode = () => {
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
@@ -13,7 +16,7 @@ const DarkMode = () => {
   };
   return (
     <div className="dk-dark-mode">
-      <input
+      <button
         type="checkbox"
         className="dk-input"
         id="dk-toggle"
