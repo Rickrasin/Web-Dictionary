@@ -1,3 +1,9 @@
 .pg-home {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.tb-container {
+  margin-bottom: 3.69rem;
 }

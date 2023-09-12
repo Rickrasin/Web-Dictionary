@@ -1,0 +1,26 @@
+.ps-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ps-phonetics {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.ps-word {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.ps-text {
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

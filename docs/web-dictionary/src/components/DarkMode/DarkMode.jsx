@@ -1,21 +1,13 @@
-import "./DarkMode.css";
 import { styled } from "@mui/material/styles";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 import Switch from "@mui/material/Switch";
 import MoonIcon from "./../../assets/images/icon-moon.svg";
 
+import "./DarkMode.css";
+
 const DarkMode = () => {
-  const setDarkMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "dark");
-  };
-
-  const setLightMode = () => {
-    document.querySelector("body").setAttribute("data-theme", "light");
-  };
-
-  const toggleTheme = (e) => {
-    if (e.target.checked) setDarkMode();
-    else setLightMode();
-  };
+  const { themePage, toggleTheme } = useContext(ThemeContext);
 
   const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 28,
@@ -73,7 +65,9 @@ const DarkMode = () => {
       <AntSwitch
         className="dk-input"
         id="dk-toggle"
+        checked={themePage === 'dark'}
         onClick={toggleTheme}
+        
       ></AntSwitch>
       <img src={MoonIcon} />
     </div>
