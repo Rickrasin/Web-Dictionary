@@ -30,7 +30,7 @@
   --heading-color: #757575;
   --link_color: white;
   --shadow_color: #a445ed;
-  transition: 0.2s all;
+  transition: 0.4s all;
 }
 
 [data-theme="light"] {
@@ -40,5 +40,5 @@
   --heading-color: #757575;
   --link_color: white;
   --shadow_color: rgba(0, 0, 0, 0.1);
-  transition: 0.2s all;
+  transition: 0.4s all;
 }

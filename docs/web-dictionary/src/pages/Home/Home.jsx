@@ -1,13 +1,13 @@
 import "./Home.css";
 
 import Topbar from "./../../components/Topbar/Topbar";
-import WordContent from "../../components/WordContent/WordContent";
+import WordDetail from "../../components/WordDetail/WordDetail";
 
 const Home = () => {
   return (
     <div className="pg-home">
-      <Topbar  />
-      <WordContent  />
+      <Topbar />
+      <WordDetail />
     </div>
   );
 };

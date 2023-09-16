@@ -17,14 +17,17 @@ const router = createBrowserRouter([
 ]);
 
 import { ThemeProvider } from "./context/ThemeContext";
+import { AudioProvider } from "./context/AudioContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
-    </ThemeProvider>
+    <AudioProvider>
+      <ThemeProvider>
+        <RouterProvider router={router}>
+          <App />
+        </RouterProvider>
+      </ThemeProvider>
+    </AudioProvider>
   </QueryClientProvider>
 );

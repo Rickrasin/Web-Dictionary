@@ -1,18 +1,13 @@
 import "./SelectFont.css";
 import Arrow from "./../../assets/images/icon-arrow-down.svg";
-
-import { useState } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
+import { useContext, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SelectFont = () => {
-  const [fontView, setFontView] = useState("Sans Serif");
+  const { fontView, setFontPage } = useContext(ThemeContext);
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
 
-  const setFontPage = (fontName, viewName) => {
-    document.querySelector("body").setAttribute("data-font", fontName);
-    setFontView(viewName);
-    setIsOptionsVisible(false);
-  };
   const toggleOptionsVisibility = () => {
     setIsOptionsVisible(!isOptionsVisible);
   };
@@ -41,7 +36,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage("sans-serif", "Sans Serif")}
+              onClick={() => setFontPage(0)}
               id="sans-serif"
             >
               Sans Serif
@@ -49,7 +44,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage("serif", "Serif")}
+              onClick={() => setFontPage(1)}
               id="serif"
             >
               Serif
@@ -57,7 +52,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage("mono", "Mono")}
+              onClick={() => setFontPage(2)}
               id="mono"
             >
               Mono
