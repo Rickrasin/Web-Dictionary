@@ -6,7 +6,12 @@ const initialState = {
   wordData: helloJson,
   wordError: false,
   wordEmpty: false,
+  isLoading: false,
 };
+
+//TODO: PALAVRA BRACK DANDO PROBLEMA
+
+//TODO: Finalizar loading
 
 const apiReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -16,6 +21,12 @@ const apiReducer = (state = initialState, action) => {
         wordData: action.payload,
         wordError: action.wordError,
         wordEmpty: action.wordEmpty,
+      };
+
+    case ActionTypes.SET_LOADING:
+      return {
+        ...state,
+        isLoading: action.isLoading,
       };
     default:
       return state;
@@ -28,9 +39,11 @@ export const setWordData = (searchTerm) => async (dispatch) => {
       type: ActionTypes.SET_WORD_DATA,
       wordData: null,
       wordEmpty: true,
+      wordError: false,
     });
   } else {
     try {
+      dispatch({ type: ActionTypes.SET_LOADING, isLoading: true });
       const response = await axios.get(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${searchTerm}`
       );
@@ -52,6 +65,8 @@ export const setWordData = (searchTerm) => async (dispatch) => {
       }
       console.log("Algum erro na requisição");
       return null;
+    } finally {
+      dispatch({ type: ActionTypes.SET_LOADING, isLoading: false });
     }
   }
 };

@@ -35,7 +35,7 @@ const SearchBar = () => {
       >
         <input
           type="text"
-          className={`sb-search-input ${wordEmpty ? "sb-error" : " "}`}
+          className={`sb-search-input ${wordEmpty ? "sb-error" : ""}`}
           id="search-input"
           name="search"
           placeholder="Search for any word..."

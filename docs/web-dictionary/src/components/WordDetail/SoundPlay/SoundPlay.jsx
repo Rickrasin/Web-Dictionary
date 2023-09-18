@@ -29,7 +29,6 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
 
   const playAudioWithValidPhonetics = (phonetics) => {
     let audioIndex = -1;
-
     // Procura o primeiro índice com um áudio válido
     for (let i = 0; i < phonetics.length; i++) {
       if (phonetics[i].audio) {
@@ -52,6 +51,8 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
   if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
     const word = wordData[0];
     const audioURL = playAudioWithValidPhonetics(word.phonetics);
+    console.log(audioURL);
+    console.log(word)
     return (
       <div className="sp-container">
         <div className="sp-play-container">

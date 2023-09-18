@@ -3,9 +3,13 @@ import SoundPlay from "./SoundPlay/SoundPlay";
 import "./WordDetail.css";
 
 const WordDetail = () => {
-  const { wordData, wordError, wordEmpty } = useSelector(
+  const { wordData, wordError, wordEmpty, isLoading } = useSelector(
     (rootReducer) => rootReducer.apiReducer
   );
+
+  if (isLoading) {
+    return <div>carregando</div>;
+  }
 
   if (wordEmpty) {
     return <div></div>;
