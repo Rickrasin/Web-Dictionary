@@ -24,8 +24,8 @@
 }
 
 [data-theme="dark"] {
-  --body_secondary: #1f1f1f; /*Secondary Color*/
   --body_background: #050505; /*Primary Color*/
+  --body_secondary: #1f1f1f; /*Secondary Color*/
   --body_color: #fff;
   --heading-color: #757575;
   --link_color: white;

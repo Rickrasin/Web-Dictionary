@@ -1,0 +1,51 @@
+.sp-play-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sp-phonetics {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.sp-word {
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.sp-text {
+  color: var(--purple);
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sp-play-button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+}
+
+#playButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(164, 69, 237, 0.2);
+  height: 4.77rem;
+  width: 4.77rem;
+  border-radius: 100%;
+  color: var(--purple);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+#playButton:hover {
+  color: white;
+  background-color: rgba(164, 69, 237, 1);
+}

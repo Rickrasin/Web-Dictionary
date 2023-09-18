@@ -1,8 +1,8 @@
 import "./Topbar.css";
 
 import LogoIcon from "./../../assets/images/logo.svg";
-import DarkMode from "./../../components/DarkMode/DarkMode";
-import SelectFont from "../SelectFont/SelectFont";
+import DarkMode from "./DarkMode/DarkMode";
+import SelectFont from "./SelectFont/SelectFont";
 
 const Topbar = () => {
   return (

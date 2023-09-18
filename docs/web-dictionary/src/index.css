@@ -43,7 +43,7 @@
 /* Mono  */
 @font-face {
   font-family: "Inconsolata";
-  src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf");
+  src: url("./assets/fonts/inconsolata/Inconsolata-VariableFont_wdth.ttf");
 }
 
 @font-face {
@@ -75,7 +75,7 @@ button {
 p {
   font-feature-settings: "clig" off, "liga" off;
 
-  font-size: 1.125rem;  
+  font-size: 1.125rem;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem; /* 133.333% */

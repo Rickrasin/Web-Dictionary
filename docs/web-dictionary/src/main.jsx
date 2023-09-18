@@ -15,19 +15,23 @@ const router = createBrowserRouter([
     children: [{ path: "/", element: <Home /> }],
   },
 ]);
+import { Provider } from "react-redux";
+import store from "./redux/store.jsx";
 
 import { ThemeProvider } from "./context/ThemeContext";
 import { AudioProvider } from "./context/AudioContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <QueryClientProvider client={queryClient}>
-    <AudioProvider>
-      <ThemeProvider>
-        <RouterProvider router={router}>
-          <App />
-        </RouterProvider>
-      </ThemeProvider>
-    </AudioProvider>
-  </QueryClientProvider>
+  <Provider store={store}>
+    <QueryClientProvider client={queryClient}>
+      <AudioProvider>
+        <ThemeProvider>
+          <RouterProvider router={router}>
+            <App />
+          </RouterProvider>
+        </ThemeProvider>
+      </AudioProvider>
+    </QueryClientProvider>
+  </Provider>
 );

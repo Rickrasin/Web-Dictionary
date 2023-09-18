@@ -1,13 +1,26 @@
-import { styled } from "@mui/material/styles";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
 import Switch from "@mui/material/Switch";
-import MoonIcon from "./../../assets/images/icon-moon.svg";
+import { styled } from "@mui/material/styles";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./DarkMode.css";
 
+import MoonIcon from "./../../../assets/images/icon-moon.svg";
+import ThemeActionTypes from "./../../../redux/Theme/action-types";
+
 const DarkMode = () => {
-  const { themePage, toggleTheme } = useContext(ThemeContext);
+  const { themePage } = useSelector((rootReducer) => rootReducer.themeReducer);
+  const dispatch = useDispatch();
+
+  const toggleTheme = () => {
+    const newTheme = themePage === "light" ? "dark" : "light";
+    dispatch({ type: ThemeActionTypes.SET_THEME, theme: newTheme });
+  };
+
+  useEffect(() => {
+    const doc = document.querySelector("body");
+    doc.setAttribute("data-theme", themePage);
+  }, [themePage]);
 
   const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 28,
@@ -65,9 +78,8 @@ const DarkMode = () => {
       <AntSwitch
         className="dk-input"
         id="dk-toggle"
-        checked={themePage === 'dark'}
+        checked={themePage === "dark"}
         onClick={toggleTheme}
-        
       ></AntSwitch>
       <img src={MoonIcon} />
     </div>

@@ -1,12 +1,32 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
 import "./SelectFont.css";
-import Arrow from "./../../assets/images/icon-arrow-down.svg";
-import { ThemeContext } from "../../context/ThemeContext";
-import { useContext, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
+import Arrow from "./../../../assets/images/icon-arrow-down.svg";
+import ThemeActionTypes from "./../../../redux/Theme/action-types";
 
 const SelectFont = () => {
-  const { fontView, setFontPage } = useContext(ThemeContext);
   const [isOptionsVisible, setIsOptionsVisible] = useState(false);
+  const { fontView, fontPage } = useSelector(
+    (rootReducer) => rootReducer.themeReducer
+  );
+  const dispatch = useDispatch();
+
+  const setFontPage = (fontViewString, fontPageString) => {
+    setIsOptionsVisible(false);
+    dispatch({
+      type: ThemeActionTypes.SET_FONT,
+      fontView: fontViewString,
+      fontPage: fontPageString,
+    });
+  };
+
+  useEffect(() => {
+    document.querySelector("body").setAttribute("data-font", fontPage);
+    setIsOptionsVisible(false);
+  }, [fontView, fontPage]);
 
   const toggleOptionsVisibility = () => {
     setIsOptionsVisible(!isOptionsVisible);
@@ -36,7 +56,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage(0)}
+              onClick={() => setFontPage("Sans Serif", "sans-serif")}
               id="sans-serif"
             >
               Sans Serif
@@ -44,7 +64,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage(1)}
+              onClick={() => setFontPage("Serif", "serif")}
               id="serif"
             >
               Serif
@@ -52,7 +72,7 @@ const SelectFont = () => {
             <button
               type="button"
               className="sf-select-option"
-              onClick={() => setFontPage(2)}
+              onClick={() => setFontPage("Mono", "mono")}
               id="mono"
             >
               Mono
