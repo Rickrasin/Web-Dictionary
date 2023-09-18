@@ -11,8 +11,6 @@ const SearchBar = () => {
   );
 
   const dispatch = useDispatch();
-  const { themePage } = useSelector((rootReducer) => rootReducer.themeReducer);
-  console.log(wordEmpty, wordError, wordData, themePage);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);

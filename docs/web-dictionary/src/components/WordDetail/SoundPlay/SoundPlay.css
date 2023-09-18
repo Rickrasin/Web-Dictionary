@@ -49,3 +49,17 @@
   color: white;
   background-color: rgba(164, 69, 237, 1);
 }
+
+.fa-play::before {
+  margin-right: -0.2rem;
+}
+
+.fa-disable {
+  color: #808080 !important;
+  opacity: 0.5;
+}
+
+.fa-disable:hover {
+  color: #909090 !important;
+  background-color: rgba(164, 69, 237, 0.2) !important;
+}

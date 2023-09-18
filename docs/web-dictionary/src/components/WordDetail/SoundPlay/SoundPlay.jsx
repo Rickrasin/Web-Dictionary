@@ -9,7 +9,7 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
   const [audio, setAudio] = useState(null);
 
   const playAudio = (audioUrl) => {
-    console.log(wordData);
+    if (!audioUrl) return;
     const newAudio = new Audio(audioUrl);
     newAudio.currentTime = 0.1;
     newAudio.play();
@@ -27,47 +27,52 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
     setAudio(null);
   };
 
-  const playAudioWithValidPhonetics = (phonetics) => {
+  const validateObjectArray = (objData, value = 0) => {
     let audioIndex = -1;
-    // Procura o primeiro índice com um áudio válido
-    for (let i = 0; i < phonetics.length; i++) {
-      if (phonetics[i].audio) {
+    for (let i = 0; i < objData.length; i++) {
+      if (objData[i]) {
         audioIndex = i;
-        break; // Encontrou um áudio válido, sai do loop
+        break;
       }
-      console.log("audio: " + phonetics[i].audio);
     }
 
     if (audioIndex !== -1) {
-      return phonetics[audioIndex].audio;
+      return objData[audioIndex + value];
     } else {
-      // Não encontrou nenhum áudio válido, pode lidar com isso aqui
-      console.log("Nenhum áudio válido encontrado.");
+      console.log("Nenhum objeto válido encontrado.");
       return null;
     }
   };
 
+  // const filterObjectValues = (objData, value) => {
+  //   objData.filter((word) => word)
+  // }
+
   //Render
   if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
     const word = wordData[0];
-    const audioURL = playAudioWithValidPhonetics(word.phonetics);
+    const phonetic = validateObjectArray(word.phonetics);
+    const audioURL = phonetic ? phonetic.audio : null;
+    console.log(word);
+    console.log(phonetic);
     console.log(audioURL);
-    console.log(word)
     return (
       <div className="sp-container">
         <div className="sp-play-container">
           <motion.div key="title" className="sp-phonetics">
-            <h1 className="sp-word">{word.word}</h1>
-            <h3 className="sp-text">{word.phonetics[1].text}</h3>
+            <h1 className="sp-word">{word?.word}</h1>
+            <h3 className="sp-text">
+              {phonetic != null ? phonetic.text : ""}
+            </h3>
           </motion.div>
 
           <button
             className="sp-play-button"
             onClick={() => {
-              !audioRunning ? playAudio(audioURL) : stopAudio();
+              !audioRunning && audioURL ? playAudio(audioURL) : stopAudio();
             }}
           >
-            <div id="playButton">
+            <div id="playButton" className={audioURL ? "" : "fa-disable"}>
               {audioRunning ? (
                 <motion.div
                   key="stop"
