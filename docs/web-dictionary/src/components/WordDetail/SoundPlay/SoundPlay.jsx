@@ -27,43 +27,32 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
     setAudio(null);
   };
 
-  const validateObjectArray = (objData, value = 0) => {
-    let audioIndex = -1;
-    for (let i = 0; i < objData.length; i++) {
-      if (objData[i]) {
-        audioIndex = i;
-        break;
+  function getFieldValue(obj, fieldName) {
+    for (const element of obj) {
+      if (Object.hasOwn(element, fieldName)) {
+        console.log(element);
+        return element[fieldName];
+      } else {
+        return null;
       }
     }
-
-    if (audioIndex !== -1) {
-      return objData[audioIndex + value];
-    } else {
-      console.log("Nenhum objeto válido encontrado.");
-      return null;
-    }
-  };
-
-  // const filterObjectValues = (objData, value) => {
-  //   objData.filter((word) => word)
-  // }
+  }
 
   //Render
   if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
     const word = wordData[0];
-    const phonetic = validateObjectArray(word.phonetics);
-    const audioURL = phonetic ? phonetic.audio : null;
+    const phonetic = word.phonetics;
+    const audioURL = getFieldValue(phonetic, "audio");
+    const phoneticText = getFieldValue(phonetic, "text");
     console.log(word);
-    console.log(phonetic);
-    console.log(audioURL);
+    console.log(phoneticText);
+    //console.log(audioURL);
     return (
       <div className="sp-container">
         <div className="sp-play-container">
           <motion.div key="title" className="sp-phonetics">
             <h1 className="sp-word">{word?.word}</h1>
-            <h3 className="sp-text">
-              {phonetic != null ? phonetic.text : ""}
-            </h3>
+            <h3 className="sp-text">{phoneticText}</h3>
           </motion.div>
 
           <button
