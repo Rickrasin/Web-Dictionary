@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { getFieldValue } from "./../../../utils/Utils";
 import PropTypes from "prop-types";
 
 import "./SoundPlay.css";
@@ -27,16 +28,6 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
     setAudio(null);
   };
 
-  function getFieldValue(obj, fieldName) {
-    for (const element of obj) {
-      console.log(element);
-      if (Object.hasOwn(element, fieldName)) {
-        return element[fieldName];
-      } 
-    }
-    return null;
-  }
-
   //Render
   if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
     const word = wordData[0];
@@ -45,7 +36,7 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
     const phoneticText = getFieldValue(phonetic, "text");
     console.log(word);
     console.log(phoneticText);
-    //console.log(audioURL);
+    console.log(audioURL);
     return (
       <div className="sp-container">
         <div className="sp-play-container">

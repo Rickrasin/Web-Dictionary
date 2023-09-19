@@ -13,7 +13,6 @@ const audioReducer = (state = initialState, action) => {
       newAudio.currentTime = 0.1;
       newAudio.play();
       newAudio.addEventListener("ended", () => {
-        console.log("Rodei");
         return { ...state, audioRunning: false };
       });
       return { ...state, audio: newAudio, audioRunning: true };

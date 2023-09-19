@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import SoundPlay from "./SoundPlay/SoundPlay";
+import Notfound from "./Notfound/NotFound";
 import "./WordDetail.css";
 
 const WordDetail = () => {
@@ -8,7 +9,7 @@ const WordDetail = () => {
   );
 
   if (isLoading) {
-    return <div>carregando</div>;
+    return <Notfound />;
   }
 
   if (wordEmpty) {
@@ -16,7 +17,7 @@ const WordDetail = () => {
   }
 
   if (wordError) {
-    return <div>Palavra não encontrada</div>;
+    return <Notfound />;
   }
 
   return (
