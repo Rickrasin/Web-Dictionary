@@ -29,13 +29,12 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
 
   function getFieldValue(obj, fieldName) {
     for (const element of obj) {
+      console.log(element);
       if (Object.hasOwn(element, fieldName)) {
-        console.log(element);
         return element[fieldName];
-      } else {
-        return null;
-      }
+      } 
     }
+    return null;
   }
 
   //Render
