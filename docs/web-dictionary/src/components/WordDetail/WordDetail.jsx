@@ -8,8 +8,17 @@ const WordDetail = () => {
     (rootReducer) => rootReducer.apiReducer
   );
 
+
+//TODO: PALAVRA BRACK DANDO PROBLEMA
+    //TODO: Audio não está puxando segunda fileira
+
+
+//TODO: Finalizar loading
+
+
+
   if (isLoading) {
-    return <Notfound />;
+    return <div> Loading</div>;
   }
 
   if (wordEmpty) {

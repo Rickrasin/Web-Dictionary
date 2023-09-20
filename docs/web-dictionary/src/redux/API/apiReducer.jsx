@@ -9,9 +9,6 @@ const initialState = {
   isLoading: false,
 };
 
-//TODO: PALAVRA BRACK DANDO PROBLEMA
-
-//TODO: Finalizar loading
 
 const apiReducer = (state = initialState, action) => {
   switch (action.type) {
