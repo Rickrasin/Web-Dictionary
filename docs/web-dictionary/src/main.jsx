@@ -18,20 +18,13 @@ const router = createBrowserRouter([
 import { Provider } from "react-redux";
 import store from "./redux/store.jsx";
 
-import { ThemeProvider } from "./context/ThemeContext";
-import { AudioProvider } from "./context/AudioContext";
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <QueryClientProvider client={queryClient}>
-      <AudioProvider>
-        <ThemeProvider>
-          <RouterProvider router={router}>
-            <App />
-          </RouterProvider>
-        </ThemeProvider>
-      </AudioProvider>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
     </QueryClientProvider>
   </Provider>
 );

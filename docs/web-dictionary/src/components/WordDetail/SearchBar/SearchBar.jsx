@@ -6,9 +6,7 @@ import { setWordData } from "../../../redux/API/apiReducer";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const { wordData, wordError, wordEmpty } = useSelector(
-    (rootReducer) => rootReducer.apiReducer
-  );
+  const { wordEmpty } = useSelector((rootReducer) => rootReducer.apiReducer);
 
   const dispatch = useDispatch();
 
@@ -18,9 +16,7 @@ const SearchBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Usa o dispatch para despachar a ação setWordData com o searchTerm
     dispatch(setWordData(searchTerm));
-    console.log(wordData);
   };
 
   return (

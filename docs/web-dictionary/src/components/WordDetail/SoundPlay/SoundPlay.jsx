@@ -34,9 +34,7 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
     const phonetic = word.phonetics;
     const audioURL = getFieldValue(phonetic, "audio");
     const phoneticText = getFieldValue(phonetic, "text");
-    console.log(word);
-    console.log(phoneticText);
-    console.log(audioURL);
+
     return (
       <div className="sp-container">
         <div className="sp-play-container">

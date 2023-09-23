@@ -1,8 +1,9 @@
 import "./Home.css";
 
-import Topbar from "./../../components/Topbar/Topbar";
-import WordDetail from "../../components/WordDetail/WordDetail";
+// import { useSelector } from "react-redux";
 import SearchBar from "../../components/WordDetail/SearchBar/SearchBar";
+import WordDetail from "../../components/WordDetail/WordDetail";
+import Topbar from "./../../components/Topbar/Topbar";
 
 const Home = () => {
   return (

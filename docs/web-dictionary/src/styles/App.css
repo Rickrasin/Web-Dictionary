@@ -1,6 +1,7 @@
 body {
   color: var(--body_color);
   background-color: var(--body_background);
+  padding: 3.63rem 1.5rem 7.38rem 1.5rem;
 }
 
 .center-content {
@@ -8,8 +9,6 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-top: 3.63rem;
-  margin-bottom: 7.75rem;
 }
 
 .app-link {

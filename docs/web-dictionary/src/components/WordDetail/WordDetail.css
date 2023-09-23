@@ -1,0 +1,45 @@
+.wd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.38rem;
+}
+
+.wd-url-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1.51rem;
+}
+
+.wd-url-body {
+  display: flex;
+  gap: 1.56rem;
+}
+
+.wd-url-title {
+  font-size: 0.875rem;
+  color: var(--heading-color);
+  font-weight: 400;
+  line-height: normal;
+}
+
+.wd-url-link {
+  color: var(--body_color);
+  font-size: 0.875rem;
+  text-decoration-line: none;
+}
+
+.wd-url-link:hover {
+  text-decoration-line: underline;
+}
+
+.wd-url-link-container {
+  display: flex;
+  align-items: flex-end;
+  color: var(--heading-color);
+  gap: 0.5rem;
+}
+
+.wd-external-link {
+  font-size: 0.8rem;
+}

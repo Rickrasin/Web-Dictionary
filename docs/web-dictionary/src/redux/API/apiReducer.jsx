@@ -9,7 +9,6 @@ const initialState = {
   isLoading: false,
 };
 
-
 const apiReducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.SET_WORD_DATA:
@@ -31,13 +30,14 @@ const apiReducer = (state = initialState, action) => {
 };
 
 export const setWordData = (searchTerm) => async (dispatch) => {
-  if (searchTerm == "") {
+  if (searchTerm === "") {
     dispatch({
       type: ActionTypes.SET_WORD_DATA,
       wordData: null,
       wordEmpty: true,
       wordError: false,
     });
+    return null;
   } else {
     try {
       dispatch({ type: ActionTypes.SET_LOADING, isLoading: true });
@@ -51,14 +51,16 @@ export const setWordData = (searchTerm) => async (dispatch) => {
         wordError: false,
         wordEmpty: false,
       });
+      return wordData; // Return the wordData when successful
     } catch (error) {
       if (error.response && error.response.status === 404) {
+        const wordData = error.response.data;
         dispatch({
           type: ActionTypes.SET_WORD_DATA,
-          payload: null,
+          payload: wordData,
           wordError: true,
         });
-        return null;
+        return wordData;
       }
       console.log("Algum erro na requisição");
       return null;
@@ -67,4 +69,5 @@ export const setWordData = (searchTerm) => async (dispatch) => {
     }
   }
 };
+
 export default apiReducer;
