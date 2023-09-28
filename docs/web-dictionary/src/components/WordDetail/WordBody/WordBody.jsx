@@ -3,9 +3,9 @@ import "./WordBody.css";
 
 //I know this is a mess
 
-const WordBody = ({ wordData, wordError }) => {
+const WordBody = ({ wordData, wordError, wordEmpty }) => {
   const meanings = wordData[0].meanings;
-  if ((wordData || wordError) && wordData.length > 0) {
+  if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
     return (
       <div className="wb-container">
         {meanings.map((meaning, index) => (
@@ -57,6 +57,7 @@ const WordBody = ({ wordData, wordError }) => {
 WordBody.propTypes = {
   wordData: PropTypes.array.isRequired,
   wordError: PropTypes.bool.isRequired,
+  wordEmpty: PropTypes.bool.isRequired,
 };
 
 export default WordBody;

@@ -1,32 +1,22 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { motion } from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
 import "./SearchBar.css";
 
 import { setWordData } from "../../../redux/API/apiReducer";
-//import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [wordEmpty, setWordEmpty] = useState(false);
+  const { wordEmpty } = useSelector((rootReducer) => rootReducer.apiReducer);
 
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
-    setSearchTerm(e.target.value.trim());
+    setSearchTerm(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (searchTerm === "" || searchTerm === null) {
-      console.log("vazio");
-      setWordEmpty(true);
-    } else {
-      console.log("cheio");
-      console.log(searchTerm);
-      setWordEmpty(false);
-      dispatch(setWordData(searchTerm));
-    }
+    dispatch(setWordData(searchTerm));
   };
 
   return (
@@ -48,9 +38,7 @@ const SearchBar = () => {
         />
         {wordEmpty && (
           // eslint-disable-next-line react/no-unescaped-entities
-          <motion.div animate={{ opacity: [0, 0.5, 1], scaleY: [0.6, 1] }}>
-            <p className="sb-error-text">Whoops, can't be empty...</p>
-          </motion.div>
+          <p className="sb-error-text">Whoops, can't be empty...</p>
         )}
       </form>
       <div className="suggestions">
