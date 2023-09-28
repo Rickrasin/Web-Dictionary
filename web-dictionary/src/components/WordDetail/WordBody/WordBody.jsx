@@ -37,13 +37,17 @@ const WordBody = ({ wordData, wordError }) => {
               {meaning.synonyms.length > 0 && (
                 <div className="wb-synonyms-container">
                   <h3 className="wb-title">Synonyms</h3>
-                  {meaning.synonyms.map((synonym, index) => {
-                    return (
-                      <a key={index} className="wb-synonym">
-                        {synonym}
-                      </a>
-                    );
-                  })}
+                  <div className="wb-synonyms-container-item">
+                    {meaning.synonyms.map((synonym, index) => {
+                      if (index <= 2) {
+                        return (
+                          <a key={index} className="wb-synonym">
+                            {synonym}
+                          </a>
+                        );
+                      }
+                    })}
+                  </div>
                 </div>
               )}
             </div>

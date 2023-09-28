@@ -71,8 +71,15 @@
 
 .wb-synonyms-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.38rem;
 }
+
+.wb-synonyms-container-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .wb-synonym {
   font-size: 1.25rem;
   color: var(--purple);
