@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    children: [{ path: "/", element: <Home /> }],
+    children: [{ path: "/Web-Dictionary", element: <Home /> }],
   },
 ]);
 import { Provider } from "react-redux";
