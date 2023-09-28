@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import "./SoundPlay.css";
 
-const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
+const SoundPlay = ({ wordData, wordError }) => {
   const [audioRunning, setAudioRunning] = useState(false);
   const [audio, setAudio] = useState(null);
 
@@ -29,27 +29,31 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
   };
 
   //Render
-  if ((wordData || wordError || wordEmpty) && wordData.length > 0) {
+  if ((wordData || !wordError) && wordData.length > 0) {
     const word = wordData[0];
-    const phonetic = word.phonetics;
-    const audioURL = getFieldValue(phonetic, "audio");
-    const phoneticText = getFieldValue(phonetic, "text");
+    const text = getFieldValue(word.phonetics, "text");
+    const audioLink = getFieldValue(word.phonetics, "audio");
 
     return (
       <div className="sp-container">
         <div className="sp-play-container">
           <motion.div key="title" className="sp-phonetics">
-            <h1 className="sp-word">{word?.word}</h1>
-            <h3 className="sp-text">{phoneticText}</h3>
+            <h1 className="sp-word">{word.word}</h1>
+
+            <h3 className="sp-text">{text}</h3>
           </motion.div>
 
           <button
             className="sp-play-button"
             onClick={() => {
-              !audioRunning && audioURL ? playAudio(audioURL) : stopAudio();
+              audioLink
+                ? !audioRunning
+                  ? playAudio(audioLink)
+                  : stopAudio()
+                : null;
             }}
           >
-            <div id="playButton" className={audioURL ? "" : "fa-disable"}>
+            <div id="playButton" className={audioLink ? "" : "fa-disable"}>
               {audioRunning ? (
                 <motion.div
                   key="stop"
@@ -78,7 +82,6 @@ const SoundPlay = ({ wordData, wordError, wordEmpty }) => {
 SoundPlay.propTypes = {
   wordData: PropTypes.array.isRequired,
   wordError: PropTypes.bool.isRequired,
-  wordEmpty: PropTypes.bool.isRequired,
 };
 
 export default SoundPlay;
