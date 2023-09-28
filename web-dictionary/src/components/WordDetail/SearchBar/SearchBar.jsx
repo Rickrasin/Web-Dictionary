@@ -19,11 +19,8 @@ const SearchBar = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (searchTerm === "" || searchTerm === null) {
-      console.log("vazio");
       setWordEmpty(true);
     } else {
-      console.log("cheio");
-      console.log(searchTerm);
       setWordEmpty(false);
       dispatch(setWordData(searchTerm));
     }
