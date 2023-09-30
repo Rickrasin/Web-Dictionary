@@ -12,9 +12,7 @@ This is a solution to the [Dictionary web app challenge on Frontend Mentor](http
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -38,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://rickrasin.github.io/Web-Dictionary/](https://rickrasin.github.io/Web-Dictionary/)
+- Solution URL: [https://github.com/Rickrasin/Web-Dictionary/](https://github.com/Rickrasin/Web-Dictionary) 
 - Live Site URL: [https://rickrasin.github.io/Web-Dictionary/](https://rickrasin.github.io/Web-Dictionary/)
 
 ## My process
