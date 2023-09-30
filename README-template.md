@@ -16,8 +16,6 @@ This is a solution to the [Dictionary web app challenge on Frontend Mentor](http
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -38,18 +36,10 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://rickrasin.github.io/Web-Dictionary/](https://rickrasin.github.io/Web-Dictionary/)
+- Live Site URL: [https://rickrasin.github.io/Web-Dictionary/](https://rickrasin.github.io/Web-Dictionary/)
 
 ## My process
 
@@ -58,61 +48,27 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
+- Axios
+- [FramerMotion](https://www.framer.com/motion/)
+- [Redux](https://redux.js.org)
+- [MUI Material](https://mui.com)
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Aprendi a utilizar Redux, de longe a biblioteca que mais me foi útil nesse projeto. Sempre achei que o Context API tinha um código meio desorganizado ao meu ver. Redux me possibilitou criar variáveis globais de uma maneira muito mais limpa. 
 
-To see how you can add code snippets, see below:
+Framer Motion também foi uma lib excepcional para algumas coisas bonitas e agradáveis no webapp, achei ele muito simples e direto, me possibilitou fazer animações com mais facilidade do que utilziando transition no CSS.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+É a primeira vez que utilizo Axios também para fazer resgatar dados de uma API, ferramenta ótima tive menos dificuldade com ela do que com express, por isso a escolhi.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+Senti que eu tive uma forte dificuldade em como organizar os arquivos e as páginas no projeto, senti mesmo que eu usei mal o React-Router-Dom.
+Também tive um pressentimento de que meus componentes poderiam melhorar, vou fazer uma página grande utilizando ReactJS, ReactRouterDom, Stylized Components, tudo ao meu alcance para facilitar organização e layout dela, o foco é em deixar tudo nela o mais sólido possível.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Linkedin - [Rickson de Oliveira Viana](https://www.linkedin.com/in/rickson-oliveira-44331822b/)
+- Frontend Mentor - [@Rickrasin](https://www.frontendmentor.io/profile/Rickrasin)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
