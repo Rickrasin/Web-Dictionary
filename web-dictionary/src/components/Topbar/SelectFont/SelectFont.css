@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
 }
 .sf-select-button {
   display: flex;
@@ -47,6 +48,7 @@
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem;
+  z-index: 1;
 }
 
 .sf-select-option:hover {

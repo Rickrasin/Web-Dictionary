@@ -1,5 +1,10 @@
 .sb-search-bar {
+  position: relative;
+  z-index: 0;
 }
+
+/* .sb-search-input-contaier {
+} */
 
 .sb-search-input {
   width: -webkit-fill-available;
@@ -33,6 +38,24 @@
   font-size: 1.25rem;
   font-weight: 700;
   line-height: normal;
+}
+
+.sb-search-btn {
+  position: absolute;
+  margin-top: 1.5rem;
+  margin-left: -2.54rem;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+.sb-circle {
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--purple);
+  position: absolute;
+  top: -36%;
+  left: -38%;
+  border-radius: 50%;
 }
 
 .sb-error {
